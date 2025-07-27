@@ -90,6 +90,7 @@ dependencies {
     testImplementation(libs.androidx.paging.common)
     testImplementation(libs.androidx.paging.testing)
     implementation(libs.androidx.material)
+    implementation (libs.material)
     implementation(libs.hilt.android)
     implementation (libs.androidx.hilt.navigation.compose)
     kapt(libs.hilt.compiler)
