@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">NewsAppAssignment</string>
+    <string name="latest_news">Latest News</string>
+    <string name="loading_text">Loading…</string>
+    <string name="loading_more_text">Loading more…</string>
+    <string name="failed_to_load_more">Failed to load more</string>
+    <string name="failed_to_load_article">Failed to load article.</string>
+    <string name="retry_text">Retry</string>
+    <string name="article_detail">Article Detail</string>
+    <string name="something_went_wrong">Something went wrong</string>
 </resources>

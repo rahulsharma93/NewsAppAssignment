@@ -6,7 +6,6 @@ import androidx.paging.PagingState
 import com.news.assignment.BuildConfig
 import com.news.assignment.data.model.Article
 
-
 /**
  * Paging 3 source for news api pagination
  */
@@ -19,7 +18,6 @@ class NewsPagingSource(
             val page = params.key ?: 1
             Log.d("NewsPagingSource", "load: page=$page, loadSize=${params.loadSize}")
             val response = api.getNewsFeed(
-                country = "us",
                 pageSize = params.loadSize.toString(),
                 page = page.toString(),
                 apiKey = BuildConfig.API_KEY
