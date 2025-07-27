@@ -12,6 +12,8 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 import com.news.assignment.BuildConfig
 import com.news.assignment.data.remote.NewsApiService
+import com.news.assignment.data.repository.NewsFeedRepositoryImpl
+import com.news.assignment.domain.repository.NewsFeedRepository
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -52,5 +54,10 @@ class ApplicationModule {
         return retrofit.create(NewsApiService::class.java)
     }
 
+    @Provides
+    @Singleton
+    fun provideNewsFeedRepository(api: NewsApiService): NewsFeedRepository {
+        return NewsFeedRepositoryImpl(api)
+    }
 
 }
