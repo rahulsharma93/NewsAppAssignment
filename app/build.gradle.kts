@@ -25,10 +25,18 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
+            buildConfigField("String", "API_BASE_URL", "\"https://newsapi.org/v2\"")
+            buildConfigField("String", "API_KEY", "\"dcd2a46c4e9045c4b2377ec5a82ecfa6\"")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+        }
+        debug {
+            isMinifyEnabled = false
+            isDebuggable = true
+            buildConfigField("String", "API_BASE_URL", "\"https://newsapi.org/v2\"")
+            buildConfigField("String", "API_KEY", "\"dcd2a46c4e9045c4b2377ec5a82ecfa6\"")
         }
     }
     compileOptions {
@@ -46,6 +54,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 
