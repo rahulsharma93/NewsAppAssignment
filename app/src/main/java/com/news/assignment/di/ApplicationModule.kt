@@ -14,6 +14,7 @@ import com.news.assignment.BuildConfig
 import com.news.assignment.data.remote.NewsApiService
 import com.news.assignment.data.repository.NewsFeedRepositoryImpl
 import com.news.assignment.domain.repository.NewsFeedRepository
+import com.news.assignment.domain.usecase.GetNewsFeedUseCase
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -60,4 +61,9 @@ class ApplicationModule {
         return NewsFeedRepositoryImpl(api)
     }
 
+    @Provides
+    @Singleton
+    fun provideGetNewsFeedUseCase(repository: NewsFeedRepository): GetNewsFeedUseCase {
+        return GetNewsFeedUseCase(repository)
+    }
 }
